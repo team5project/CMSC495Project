@@ -105,48 +105,48 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="loginPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="2580" max="32767" attributes="0"/>
+              <EmptySpace pref="9809" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="1290" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4904" max="32767" attributes="0"/>
                   <Component id="registerPanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="1290" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4905" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="1230" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4845" max="32767" attributes="0"/>
                   <Component id="homePanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="1231" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4845" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="3" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="1252" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4866" max="32767" attributes="0"/>
                   <Component id="resultsPanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="1252" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4867" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="4" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="1250" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4865" max="32767" attributes="0"/>
                   <Component id="upcomingGamesPanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="1251" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4865" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="5" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="1258" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4872" max="32767" attributes="0"/>
                   <Component id="wagersPanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="1258" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4873" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="6" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="1290" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4904" max="32767" attributes="0"/>
                   <Component id="thankYouPanel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="1290" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="4905" max="32767" attributes="0"/>
               </Group>
           </Group>
           <Group type="103" rootIndex="7" groupAlignment="0" attributes="0">
@@ -204,7 +204,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="loginLoginButton" min="-2" pref="119" max="-2" attributes="0"/>
@@ -229,7 +229,7 @@
                       </Group>
                       <Component id="loginHeadingLabel" min="-2" pref="333" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="213" max="32767" attributes="0"/>
+                  <EmptySpace pref="219" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -328,10 +328,9 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="registerPasswordLabel" min="-2" max="-2" attributes="0"/>
@@ -344,10 +343,11 @@
                                   <Component id="registerUsernameTextField" max="32767" attributes="0"/>
                               </Group>
                               <Component id="registerHeadingLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="registerRegisterButton" alignment="1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="registerRegisterButton" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                           <Component id="registerTermsJSP" min="-2" pref="315" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -358,8 +358,9 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="registerHeadingLabel" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="registerUsernameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="registerUsernameTextField" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
@@ -369,11 +370,11 @@
                       <Component id="registerPasswordLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="registerPasswordField" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="registerRegisterButton" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="registerTermsJSP" min="-2" pref="86" max="-2" attributes="0"/>
-                  <EmptySpace pref="114" max="32767" attributes="0"/>
+                  <EmptySpace pref="124" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -1642,22 +1643,22 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="bournemouthHeadingLabel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="bournemouthTeamLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Component id="bournemouthLogoLabel" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="bournemouthScheduleLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="bournemouthJSP" min="-2" pref="92" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="bournemouthBackButton" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace pref="136" max="32767" attributes="0"/>
+                  <EmptySpace pref="179" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -3292,22 +3293,22 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="norwichHeadingLabel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="norwichTeamLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Component id="norwichLogoLabel" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="norwichScheduleLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="norwichJSP" min="-2" pref="92" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="norwichBackButton" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace pref="125" max="32767" attributes="0"/>
+                  <EmptySpace pref="190" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -3442,22 +3443,22 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="sheffieldHeadingLabel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="sheffieldTeamLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Component id="sheffieldLogoLabel" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="sheffieldScheduleLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="sheffieldJSP" min="-2" pref="92" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="sheffieldBackButton" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace pref="132" max="32767" attributes="0"/>
+                  <EmptySpace pref="183" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -3592,22 +3593,22 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="southamptonHeadingLabel" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="southamptonTeamLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Component id="southamptonLogoLabel" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="southamptonScheduleLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="southamptonJSP" min="-2" pref="92" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="southamptonBackButton" min="-2" pref="35" max="-2" attributes="0"/>
-                  <EmptySpace pref="122" max="32767" attributes="0"/>
+                  <EmptySpace pref="193" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
