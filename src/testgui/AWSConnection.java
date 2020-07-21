@@ -12,7 +12,6 @@ public class AWSConnection {
 
     public void dbConnection(){
         try {
-
             conn = DriverManager.getConnection(url,user,password);
             System.out.println("Database Connected");
         }catch (SQLException e ){
