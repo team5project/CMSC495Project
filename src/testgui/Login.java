@@ -6,6 +6,13 @@
 package testgui;
 
 
+import javax.swing.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Alan
@@ -290,6 +297,8 @@ public class Login extends javax.swing.JFrame {
         loginRegisterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginRegisterButtonActionPerformed(evt);
+
+
             }
         });
 
@@ -382,6 +391,7 @@ public class Login extends javax.swing.JFrame {
         registerRegisterButton.setText("Register Account");
         registerRegisterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+
                 registerRegisterButtonActionPerformed(evt);
             }
         });
@@ -2818,6 +2828,23 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_loginUsernameTextFieldActionPerformed
 
     private void loginLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginLoginButtonActionPerformed
+        String username = loginUsernameTextField.getText();
+        String password = String.valueOf(loginPasswordField.getPassword());
+        AWSConnection conn = new AWSConnection();
+        try{
+            PreparedStatement ps = conn.dbConnection().prepareStatement("SELECT * FROM user_login WHERE username = ? AND password = ?");
+            ps.setString(1,username);
+            ps.setString(2,password);
+            ResultSet rs  = ps.executeQuery();
+            if (rs.next()){
+                JOptionPane.showConfirmDialog(null, "User" + username + "is Logged in");
+            }else{
+                JOptionPane.showMessageDialog(null,"Incorrect Username or password","Login Failed",2);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
         loginPanel.setVisible(false);
         homePanel.setVisible(true);
     }//GEN-LAST:event_loginLoginButtonActionPerformed
@@ -2833,6 +2860,27 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_registerPasswordFieldActionPerformed
 
     private void registerRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerRegisterButtonActionPerformed
+        String username = registerUsernameTextField.getText();
+        String password = String.valueOf(registerPasswordField.getPassword());
+        userCheck check = new userCheck();
+        AWSConnection conn = new AWSConnection();
+        if (username.equals("")){
+            JOptionPane.showMessageDialog(null,"Enter a Username");
+        }else if (password.equals("")){
+            JOptionPane.showMessageDialog(null,"Enter a Password");
+        }else if (check.checkUserName(username)){
+            JOptionPane.showMessageDialog(null, "This Username Already Exist");
+        }
+        try {
+            PreparedStatement ps = conn.dbConnection().prepareStatement("INSERT INTO user_login(username, password) VALUES (?,?)");
+            ps.setString(1,username);
+            ps.setString(2,password);
+            if (ps.executeUpdate() > 0){
+                JOptionPane.showMessageDialog(null, "New User Add");
+            }
+        } catch (SQLException throwables) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE,null,throwables);
+        }
         registerPanel.setVisible(false);
         homePanel.setVisible(true);
     }//GEN-LAST:event_registerRegisterButtonActionPerformed
@@ -3256,7 +3304,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel loginHeadingLabel;
     private javax.swing.JButton loginLoginButton;
     private javax.swing.JPanel loginPanel;
-    private javax.swing.JPasswordField loginPasswordField;
+    private JPasswordField loginPasswordField;
     private javax.swing.JLabel loginPasswordLabel;
     private javax.swing.JButton loginRegisterButton;
     private javax.swing.JLabel loginUsernameLabel;
