@@ -10,7 +10,7 @@ public class userCheck {
     PreparedStatement ps;
     ResultSet rs;
 
-    boolean checkUserName(String username) {
+    boolean checkUserName(String username) throws SQLException {
         try {
             ps = conn.dbConnection().prepareStatement("SELECT * FROM user_login WHERE username = ?");
             ps.setString(1, username);
@@ -22,6 +22,8 @@ public class userCheck {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        ps.close();
+        rs.close();
         return userCheck;
     }
 }
