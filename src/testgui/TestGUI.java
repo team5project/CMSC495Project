@@ -6,7 +6,6 @@
 package testgui;
 
 /**
- *
  * @author Alan
  */
 public class TestGUI {
@@ -18,5 +17,5 @@ public class TestGUI {
         Login loginGUI = new Login();
         loginGUI.setVisible(true);
     }
-    
+
 }

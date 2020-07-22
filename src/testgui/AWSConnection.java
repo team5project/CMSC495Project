@@ -10,11 +10,11 @@ public class AWSConnection {
     String password = "Skating1";
     Connection conn = null;
 
-    public Connection dbConnection(){
+    public Connection dbConnection() {
         try {
-            conn = DriverManager.getConnection(url,user,password);
+            conn = DriverManager.getConnection(url, user, password);
             System.out.println("Database Connected");
-        }catch (SQLException e ){
+        } catch (SQLException e) {
             e.getMessage();
             System.out.println("Connection Failed " + e.getLocalizedMessage());
         }

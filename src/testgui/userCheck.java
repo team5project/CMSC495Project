@@ -10,12 +10,12 @@ public class userCheck {
     PreparedStatement ps;
     ResultSet rs;
 
-    boolean checkUserName(String username){
+    boolean checkUserName(String username) {
         try {
             ps = conn.dbConnection().prepareStatement("SELECT * FROM user_login WHERE username = ?");
-            ps.setString(1,username);
+            ps.setString(1, username);
             rs = ps.executeQuery();
-            if (rs.next()){
+            if (rs.next()) {
                 userCheck = true;
             }
 
