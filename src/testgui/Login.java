@@ -31,6 +31,12 @@ public class Login extends javax.swing.JFrame {
         conn.dbConnection();
         showRankings();
     }
+
+    /**
+     * Gets team ranking information from the database.
+     * @author Keenan
+     * @return rankings
+     */
     public ArrayList<TeamRanking> teamRankings(){
         ArrayList<TeamRanking> rankings = new ArrayList<>();
         try{
@@ -50,6 +56,11 @@ public class Login extends javax.swing.JFrame {
         return rankings;
     }
 
+    /**
+     * Modifies homeStandingsTable to show rankings .
+     * @author Keenan
+     * @return void
+     */
     public void showRankings(){
         ArrayList<TeamRanking> rankingList = teamRankings();
         DefaultTableModel model = (DefaultTableModel) homeStandingsTable.getModel();
