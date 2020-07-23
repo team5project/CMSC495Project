@@ -7,9 +7,12 @@ package testgui;
 
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,9 +22,49 @@ import java.util.logging.Logger;
 public class Login extends javax.swing.JFrame {
 
     static Login myLogin = new Login();
+    AWSConnection conn = new AWSConnection();
+    PreparedStatement ps;
+    ResultSet rs;
 
     public Login() {
         initComponents();
+        conn.dbConnection();
+        showRankings();
+    }
+    public ArrayList<TeamRanking> teamRankings(){
+        ArrayList<TeamRanking> rankings = new ArrayList<>();
+        try{
+            ps = conn.dbConnection().prepareStatement("SELECT * FROM team_ranking");
+            rs = ps.executeQuery();
+            TeamRanking teamRanking;
+            while (rs.next()){
+                teamRanking = new TeamRanking(rs.getString("team"),rs.getInt("ranking"),
+                                              rs.getInt("wins"),rs.getInt("losses"),
+                                              rs.getInt("draws"),rs.getInt("goals_for"),
+                                              rs.getInt("goals_against"));
+                rankings.add(teamRanking);
+            }
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return rankings;
+    }
+
+    public void showRankings(){
+        ArrayList<TeamRanking> rankingList = teamRankings();
+        DefaultTableModel model = (DefaultTableModel) homeStandingsTable.getModel();
+        Object[] row = new Object[7];
+        for (int i = 0; i < rankingList.size(); i++){
+            row[0] = rankingList.get(i).getTeam();
+            row[1] = rankingList.get(i).getRanking();
+            row[2] = rankingList.get(i).getWins();
+            row[3] = rankingList.get(i).getLosses();
+            row[4] = rankingList.get(i).getDraws();
+            row[5] = rankingList.get(i).getGoalsFor();
+            row[6] = rankingList.get(i).getGoalsAgainst();
+            model.addRow(row);
+        }
+
     }
 
 
@@ -302,7 +345,11 @@ public class Login extends javax.swing.JFrame {
         loginLoginButton.setText("Login");
         loginLoginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginLoginButtonActionPerformed(evt);
+                try {
+                    loginLoginButtonActionPerformed(evt);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
             }
         });
 
@@ -388,14 +435,18 @@ public class Login extends javax.swing.JFrame {
         registerRegisterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
 
-                registerRegisterButtonActionPerformed(evt);
+                try {
+                    registerRegisterButtonActionPerformed(evt);
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
             }
         });
 
         registerTermsTextArea.setEditable(false);
         registerTermsTextArea.setColumns(20);
         registerTermsTextArea.setRows(5);
-        registerTermsTextArea.setText("By registering this account, you are acknowledging\nthat you are ofvlegal age and will comply with all\ngambling regulations in your region.");
+        registerTermsTextArea.setText("By registering this account, you are acknowledging\nthat you are of legal age and will comply with all\ngambling regulations in your region.");
         registerTermsJSP.setViewportView(registerTermsTextArea);
 
         javax.swing.GroupLayout registerPanelLayout = new javax.swing.GroupLayout(registerPanel);
@@ -473,28 +524,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         homeStandingsTable.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null},
-                        {null, null, null, null, null, null, null}
-                },
+                new Object[][]{},
                 new String[]{
                         "Team", "Ranking", "Wins", "Losses", "Draws", "Goals For", "Goals Against"
                 }
@@ -2823,23 +2853,25 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginUsernameTextFieldActionPerformed
 
-    private void loginLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginLoginButtonActionPerformed
+    private void loginLoginButtonActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_loginLoginButtonActionPerformed
         String username = loginUsernameTextField.getText();
         String password = String.valueOf(loginPasswordField.getPassword());
-        AWSConnection conn = new AWSConnection();
         try {
-            PreparedStatement ps = conn.dbConnection().prepareStatement("SELECT * FROM user_login WHERE username = ? AND password = ?");
+            ps = conn.dbConnection().prepareStatement("SELECT * FROM user_login WHERE username = ? AND password = ?");
             ps.setString(1, username);
             ps.setString(2, password);
-            ResultSet rs = ps.executeQuery();
+            rs = ps.executeQuery();
             if (rs.next()) {
                 JOptionPane.showConfirmDialog(null, "User" + username + "is Logged in");
             } else {
                 JOptionPane.showMessageDialog(null, "Incorrect Username or password", "Login Failed", 2);
             }
+
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
 
         loginPanel.setVisible(false);
         homePanel.setVisible(true);
@@ -2855,11 +2887,11 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_registerPasswordFieldActionPerformed
 
-    private void registerRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerRegisterButtonActionPerformed
+    private void registerRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_registerRegisterButtonActionPerformed
         String username = registerUsernameTextField.getText();
         String password = String.valueOf(registerPasswordField.getPassword());
         userCheck check = new userCheck();
-        AWSConnection conn = new AWSConnection();
+
         if (username.equals("")) {
             JOptionPane.showMessageDialog(null, "Enter a Username");
         } else if (password.equals("")) {
@@ -2868,7 +2900,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "This Username Already Exist");
         }
         try {
-            PreparedStatement ps = conn.dbConnection().prepareStatement("INSERT INTO user_login(username, password) VALUES (?,?)");
+            ps = conn.dbConnection().prepareStatement("INSERT INTO user_login(username, password) VALUES (?,?)");
             ps.setString(1, username);
             ps.setString(2, password);
             if (ps.executeUpdate() > 0) {
