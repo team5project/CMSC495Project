@@ -57,7 +57,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     /**
-     * Modifies homeStandingsTable to show rankings .
+     * Modifies homeStandingsTable to show rankings.
      * @author Keenan
      * @return void
      */
@@ -1032,10 +1032,9 @@ public class Login extends javax.swing.JFrame {
 
         arsenalTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sunday 12 July 2020", "Tottenham Hotspur", "Tottenham Hotspur Stadium, London"},
+                        {"Wed 15 Jul 2020", "Liverpool", "Emirates Stadium, London"},
+                        {"Tue 21 Jul 2020", "Aston Villa", "Villa Park, Birmingham"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -3230,13 +3229,7 @@ public class Login extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
