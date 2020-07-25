@@ -3,8 +3,13 @@ package testgui;
 import java.util.Date;
 
 public class TeamRanking {
-    private String team;
-    private int ranking,wins,losses,draws,goalsFor,goalsAgainst;
+    private final String team;
+    private final int ranking;
+    private final int wins;
+    private final int losses;
+    private final int draws;
+    private final int goalsFor;
+    private final int goalsAgainst;
 
     TeamRanking(String team,int ranking,int wins,int losses,int draws,int goalsFor,int goalsAgainst){
         this.team = team;

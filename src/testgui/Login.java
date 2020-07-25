@@ -30,6 +30,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         conn.dbConnection();
         showRankings();
+        showScores();
     }
 
     /**
@@ -50,10 +51,37 @@ public class Login extends javax.swing.JFrame {
                                               rs.getInt("goals_against"));
                 rankings.add(teamRanking);
             }
+            ps.close();
+            rs.close();
         }catch (SQLException e){
             JOptionPane.showMessageDialog(null,e);
         }
         return rankings;
+    }
+
+    /**
+     * Gets team scores information from the database.
+     * @author Keenan
+     * @return scores
+     */
+    public ArrayList<ScoreResults> scoreResults(){
+        ArrayList<ScoreResults> scores = new ArrayList<>();
+        try{
+           ps = conn.dbConnection().prepareStatement("SELECT * FROM score_result");
+           rs = ps.executeQuery();
+           ScoreResults scoreResults;
+           while (rs.next()){
+               scoreResults = new ScoreResults(rs.getString("score_date"),rs.getString("home_team"),
+                                               rs.getInt("home_goals"),rs.getString("away_team"),
+                                               rs.getInt("away_goals"),rs.getString("venue"));
+               scores.add(scoreResults);
+           }
+           ps.close();
+           rs.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return scores;
     }
 
     /**
@@ -75,6 +103,27 @@ public class Login extends javax.swing.JFrame {
             row[6] = rankingList.get(i).getGoalsAgainst();
             model.addRow(row);
         }
+
+    }
+    /**
+     * Modifies resultsScoresTable to show rankings.
+     * @author Keenan
+     * @return void
+     */
+    public void showScores(){
+            ArrayList<ScoreResults> scoreResults = scoreResults();
+            DefaultTableModel model = (DefaultTableModel) resultsScoresTable.getModel();
+            Object[] row = new Object[6];
+        for (int i = 0; i < scoreResults.size(); i++){
+            row[0] = scoreResults.get(i).getDate();
+            row[1] = scoreResults.get(i).getHomeTeam();
+            row[2] = scoreResults.get(i).getHomeGoals();
+            row[3] = scoreResults.get(i).getAwayTeam();
+            row[4] = scoreResults.get(i).getAwayGoals();
+            row[5] = scoreResults.get(i).getVenue();
+            model.addRow(row);
+        }
+
 
     }
 
@@ -600,18 +649,7 @@ public class Login extends javax.swing.JFrame {
         resultsHeadingLabel.setText("Soccer Scores and Wagers");
 
         resultsScoresTable.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null},
-                        {null, null, null, null, null, null}
-                },
+                new Object[][]{},
                 new String[]{
                         "Date", "Home Team", "Home Goals", "Away Team", "Away Goals", "Venue"
                 }
@@ -1792,10 +1830,10 @@ public class Login extends javax.swing.JFrame {
 
         liverpoolTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sat 11 Jul 2020", "Burnley", "Anfield, Liverpool"},
+                        {"Wed 15 Jul 2020", "Arsenal", "Emirates Stadium, London"},
+                        {"Wed 22 Jul 2020", "Chelsea", "Anfield, Liverpool"},
+                        {"Sun 26 Jul 2020", "NewCastle United", "St. James' Park, Newcastle"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -1877,10 +1915,10 @@ public class Login extends javax.swing.JFrame {
 
         manCityTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sat 11 Jul 2020", "Brighton & Hove Albion", "Amex Stadium, Falmer"},
+                        {"Wed 15 Jul 2020", "Bournemouth", "Etihad Stadium, Manchester"},
+                        {"Tue 21 Jul 2020", "Watford", "Vicarage Road, Watford"},
+                        {"Sun 26 Jul 2020", "Norwich City", "Etihad Stadium, Manchester"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -1962,10 +2000,10 @@ public class Login extends javax.swing.JFrame {
 
         manUnitedTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Mon 13 Jul 2020", "Southhampton", "Old Trafford, Manchester"},
+                        {"Thu 16 Jul 2020", "Crystal Palace", "Selhurst Park, London"},
+                        {"Wed 22 Jul 2020", "West Ham United", "Old Trafford, Manchester"},
+                        {"Sun 26 Jul 2020", "Leicester City", "King Power Stadium, Leicester"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -2047,10 +2085,10 @@ public class Login extends javax.swing.JFrame {
 
         ncuTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sat 11 Jul 2020", "Watford", "Vicarage Road, Watford"},
+                        {"Wed 15 Jul 2020", "Tottenham Hotspur", "St. James' Park, Newcastle"},
+                        {"Mon 20 Jul 2020", "Brighton and Hove Albion", "Amex Stadium, Falmer"},
+                        {"Sun 26 Jul 2020", "Liverpool", "St. James' Park, Newcastle"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -2132,10 +2170,10 @@ public class Login extends javax.swing.JFrame {
 
         norwichTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sat 11 Jul 2020", "West Ham United", "Carrow Road, Norwich"},
+                        {"Tue 14 Jul 2020", "Chelsea", "Stamford Bridge, London"},
+                        {"Sat 18 Jul 2020", "Burnley", "Carrow Road, Norwich"},
+                        {"Sun 26 Jul 2020", "Manchester City", "Etihad Stadium, Manchester"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -2217,10 +2255,10 @@ public class Login extends javax.swing.JFrame {
 
         sheffieldTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sat 11 Jul 2020", "Chelsea", "Bramall Lane, Sheffield"},
+                        {"Thu 16 Jul 2020", "Leicester City", "King Power Stadium, Leicester"},
+                        {"Mon 20 Jul 2020", "Everton", "Bramall Lane, Sheffield"},
+                        {"Sun 26 Jul 2020", "Southampton", "St. Mary's Stadium, Southampton"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -2302,10 +2340,10 @@ public class Login extends javax.swing.JFrame {
 
         southamptonTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Mon 13 Jul 2020", "Manchester United", "Old Trafford, Manchester"},
+                        {"Thu 16 Jul 2020", "Brighton and Hove Albion", "St. Mary's Stadium, Southampton"},
+                        {"Mon 20 Jul 2020", "Everton", "Bramall Lane, Sheffield"},
+                        {"Sun 26 Jul 2020", "Sheffield United", "St. Mary's Stadium, Southampton"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -2387,10 +2425,10 @@ public class Login extends javax.swing.JFrame {
 
         tottenhamTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sun 12 Jul 2020", "Arsenal", "Tottenham Hotspur Stadium, London"},
+                        {"Wed 15 Jul 2020", "Newcastle United", "St. James' Park, Newcastle"},
+                        {"Sun 19 Jul 2020", "Leicester City", "Tottenham Hotspur Stadium, London"},
+                        {"Sun 26 Jul 2020", "Crystal Palace", "Selhurst Park, London"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -2472,10 +2510,10 @@ public class Login extends javax.swing.JFrame {
 
         watfordTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sat 11 Jul 2020", "Newcastle United", "Vicarage Road, Watford"},
+                        {"Fri 17 Jul 2020", "West Ham United", "London Stadium, London"},
+                        {"Tue 21 Jul 2020", "Manchester City","Vicarage Road, Watford"},
+                        {"Sun 26 Jul 2020", "Arsenal", "Emirates Stadium, London"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -2557,10 +2595,10 @@ public class Login extends javax.swing.JFrame {
 
         whTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sat 11 Jul 2020", "Norwich City", "Carrow Road, Norwich"},
+                        {"Fri 17 Jul 2020", "Watford", "London Stadium, London"},
+                        {"Wed 22 Jul 2020", "Manchester United", "Old Trafford, Manchester"},
+                        {"Sun 26 Jul 2020", "Aston Villa", "London Stadium, London"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -2642,10 +2680,10 @@ public class Login extends javax.swing.JFrame {
 
         wolvesTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
+                        {"Sun 12 Jul 2020", "Everton", "Molineux Stadium, Wolverhampton"},
+                        {"Wed 15 Jul 2020", "Burnley", "Turf Moor, Burnley"},
+                        {"Mon 20 Jul 2020", "Crystal Palace", "Molineux Stadium, Wolverhampton"},
+                        {"Sun 26 Jul 2020", "Chelsea", "Stamford Bridge, London"}
                 },
                 new String[]{
                         "Date", "Opponent", "Venue"
@@ -2915,7 +2953,7 @@ public class Login extends javax.swing.JFrame {
             ps.setString(1, username);
             ps.setString(2, password);
             if (ps.executeUpdate() > 0) {
-                JOptionPane.showMessageDialog(null, "New User Add");
+                JOptionPane.showMessageDialog(null, "New User Added","User Registration",2);
             }
         } catch (SQLException throwables) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, throwables);
