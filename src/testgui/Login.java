@@ -2911,7 +2911,7 @@ public class Login extends javax.swing.JFrame {
             ps.setString(2, password);
             rs = ps.executeQuery();
             if (rs.next()) {
-                JOptionPane.showConfirmDialog(null, "User" + username + "is Logged in");
+                JOptionPane.showMessageDialog(null, "User " + username + " is Logged in","User Login",2);
             } else {
                 JOptionPane.showMessageDialog(null, "Incorrect Username or password", "Login Failed", 2);
             }
