@@ -32,7 +32,7 @@ public class Login extends javax.swing.JFrame {
         showRankings();
         showScores();
     }
-
+/*********************************************************/
     /**
      * Gets team ranking information from the database.
      * @author Keenan
@@ -84,6 +84,20 @@ public class Login extends javax.swing.JFrame {
         return scores;
     }
 
+    public ArrayList<UpcomingGames>upcomingGames35(){
+
+    }
+    public ArrayList<UpcomingGames>upcomingGames36(){
+
+    }
+    public ArrayList<UpcomingGames>upcomingGames37(){
+
+    }
+    public ArrayList<UpcomingGames>upcomingGames38(){
+
+    }
+    /*********************************************************/
+    /*********************************************************/
     /**
      * Modifies homeStandingsTable to show rankings.
      * @author Keenan
@@ -102,6 +116,7 @@ public class Login extends javax.swing.JFrame {
             row[5] = rankingList.get(i).getGoalsFor();
             row[6] = rankingList.get(i).getGoalsAgainst();
             model.addRow(row);
+
         }
 
     }
@@ -123,9 +138,12 @@ public class Login extends javax.swing.JFrame {
             row[5] = scoreResults.get(i).getVenue();
             model.addRow(row);
         }
-
-
     }
+    public void showUpcomingWeek35(){}
+    public void showUpcomingWeek36(){}
+    public void showUpcomingWeek37(){}
+    public void showUpcomingWeek38(){}
+    /*********************************************************/
 
 
     /**
