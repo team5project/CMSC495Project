@@ -207,8 +207,8 @@ public class Login extends javax.swing.JFrame {
             UpcomingGames upcomingGames;
             while (rs.next()){
                 upcomingGames = new UpcomingGames(rs.getString("match_date"),
-                        rs.getString("away_team"),
-                        rs.getString("home_team"));
+                                                  rs.getString("away_team"),
+                                                  rs.getString("home_team"));
                 week38.add(upcomingGames);
             }
         }catch (SQLException e){
@@ -216,6 +216,12 @@ public class Login extends javax.swing.JFrame {
         }
         return week38;
     }
+
+    //public ArrayList<OverUnderFormula>getMatchData(){
+
+
+    //}
+
 
 
     /**
@@ -273,10 +279,9 @@ public class Login extends javax.swing.JFrame {
             matchModel.addRow(row);
         }
     }
+
+
     /*********************************************************/
-
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1061,7 +1066,6 @@ public class Login extends javax.swing.JFrame {
 
         wagersTable.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{
-                        {null, null, null}
                 },
                 new String[]{
                         "Away Team", "Home Team", "Over/Under"
@@ -3200,54 +3204,122 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_upcomingGoButtonActionPerformed
 
     private void upcomingGame1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame1ButtonActionPerformed
-        // This is 1 of 10 buttons that will lead to the same panel (wagersPanel)
-        // The button will determine via a flag or some other feature how the wagersPanel
-        // will be filled.
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(0,1);
+        row[1] = model1.getValueAt(0,2);
+        model2.addRow(row);
+
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame1ButtonActionPerformed
 
     private void upcomingGame2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame2ButtonActionPerformed
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(1,1);
+        row[1] = model1.getValueAt(1,2);
+        model2.addRow(row);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame2ButtonActionPerformed
 
     private void upcomingGame3ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame3ButtonActionPerformed
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(2,1);
+        row[1] = model1.getValueAt(2,2);
+        model2.addRow(row);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame3ButtonActionPerformed
 
     private void upcomingGame4ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame4ButtonActionPerformed
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(3,1);
+        row[1] = model1.getValueAt(3,2);
+        model2.addRow(row);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame4ButtonActionPerformed
 
     private void upcomingGame5ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame5ButtonActionPerformed
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(4,1);
+        row[1] = model1.getValueAt(4,2);
+        model2.addRow(row);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame5ButtonActionPerformed
 
     private void upcomingGame6ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame6ButtonActionPerformed
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(5,1);
+        row[1] = model1.getValueAt(5,2);
+        model2.addRow(row);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame6ButtonActionPerformed
 
     private void upcomingGame7ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame7ButtonActionPerformed
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(6,1);
+        row[1] = model1.getValueAt(6,2);
+        model2.addRow(row);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame7ButtonActionPerformed
 
     private void upcomingGame8ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame8ButtonActionPerformed
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(7,1);
+        row[1] = model1.getValueAt(7,2);
+        model2.addRow(row);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame8ButtonActionPerformed
 
     private void upcomingGame9ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame9ButtonActionPerformed
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(8,1);
+        row[1] = model1.getValueAt(8,2);
+        model2.addRow(row);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame9ButtonActionPerformed
 
     private void upcomingGame10ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame10ButtonActionPerformed
+        DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[2];
+        DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        model2.setRowCount(0);
+        row[0] = model1.getValueAt(9,1);
+        row[1] = model1.getValueAt(9,2);
+        model2.addRow(row);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame10ButtonActionPerformed
