@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -84,17 +85,95 @@ public class Login extends javax.swing.JFrame {
         return scores;
     }
 
+    /**
+     * Gets week 35 match information from the database.
+     * @author Keenan
+     * @return week35
+     */
     public ArrayList<UpcomingGames>upcomingGames35(){
-
+        ArrayList<UpcomingGames> week35 = new ArrayList<>();
+        try{
+            ps = conn.dbConnection().prepareStatement("SELECT * FROM upcoming_week_35");
+            rs = ps.executeQuery();
+            UpcomingGames upcomingGames;
+            while (rs.next()){
+                upcomingGames = new UpcomingGames(rs.getString("match_date"),
+                                                  rs.getString("away_team"),
+                                                  rs.getString("home_team"));
+                week35.add(upcomingGames);
+            }
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return week35;
     }
+    /**
+     * Gets week 36 match information from the database.
+     * @author Keenan
+     * @return week36
+     */
     public ArrayList<UpcomingGames>upcomingGames36(){
-
+        ArrayList<UpcomingGames> week36 = new ArrayList<>();
+        try{
+            ps = conn.dbConnection().prepareStatement("SELECT * FROM upcoming_week_36");
+            rs = ps.executeQuery();
+            UpcomingGames upcomingGames;
+            while (rs.next()){
+                upcomingGames = new UpcomingGames(rs.getString("match_date"),
+                        rs.getString("away_team"),
+                        rs.getString("home_team"));
+                week36.add(upcomingGames);
+            }
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return week36;
     }
+
+    /**
+     * Gets week 37 match information from the database.
+     * @author Keenan
+     * @return week37
+     */
     public ArrayList<UpcomingGames>upcomingGames37(){
-
+        ArrayList<UpcomingGames> week37 = new ArrayList<>();
+        try{
+            ps = conn.dbConnection().prepareStatement("SELECT * FROM upcoming_week_37");
+            rs = ps.executeQuery();
+            UpcomingGames upcomingGames;
+            while (rs.next()){
+                upcomingGames = new UpcomingGames(rs.getString("match_date"),
+                        rs.getString("away_team"),
+                        rs.getString("home_team"));
+                week37.add(upcomingGames);
+            }
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return week37;
     }
-    public ArrayList<UpcomingGames>upcomingGames38(){
 
+    /**
+     * Gets week 38 match information from the database.
+     * @author Keenan
+     * @return week38
+     */
+    public ArrayList<UpcomingGames>upcomingGames38(){
+        ArrayList<UpcomingGames> week38 = new ArrayList<>();
+        try{
+            ps = conn.dbConnection().prepareStatement("SELECT * FROM upcoming_week_38");
+            rs = ps.executeQuery();
+            UpcomingGames upcomingGames;
+            while (rs.next()){
+                upcomingGames = new UpcomingGames(rs.getString("match_date"),
+                        rs.getString("away_team"),
+                        rs.getString("home_team"));
+                week38.add(upcomingGames);
+            }
+        }catch (SQLException e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return week38;
     }
     /*********************************************************/
     /*********************************************************/
@@ -139,10 +218,62 @@ public class Login extends javax.swing.JFrame {
             model.addRow(row);
         }
     }
-    public void showUpcomingWeek35(){}
-    public void showUpcomingWeek36(){}
-    public void showUpcomingWeek37(){}
-    public void showUpcomingWeek38(){}
+
+    /**
+     * Modifies upcomingScheduleTable to show match data for that week.
+     * Data includes Match Date, Home Team, and Away Team
+     * @author Keenan
+     * @return void
+     */
+    public void showUpcomingWeek35(){
+        ArrayList<UpcomingGames> week35 = upcomingGames35();
+        DefaultTableModel matchModel = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[3];
+        matchModel.setRowCount(0);
+        for (int i = 0; i < week35.size(); i++){
+            row[0] = week35.get(i).getDate();
+            row[1] = week35.get(i).getAwayTeam();
+            row[2] = week35.get(i).getHomeTeam();
+            matchModel.addRow(row);
+        }
+    }
+    public void showUpcomingWeek36(){
+        ArrayList<UpcomingGames> week36 = upcomingGames36();
+        DefaultTableModel matchModel = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[3];
+        matchModel.setRowCount(0);
+        for (int i = 0; i < week36.size(); i++){
+            row[0] = week36.get(i).getDate();
+            row[1] = week36.get(i).getAwayTeam();
+            row[2] = week36.get(i).getHomeTeam();
+            matchModel.addRow(row);
+        }
+    }
+
+    public void showUpcomingWeek37(){
+        ArrayList<UpcomingGames> week37 = upcomingGames37();
+        DefaultTableModel matchModel = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[3];
+        matchModel.setRowCount(0);
+        for (int i = 0; i < week37.size(); i++){
+            row[0] = week37.get(i).getDate();
+            row[1] = week37.get(i).getAwayTeam();
+            row[2] = week37.get(i).getHomeTeam();
+            matchModel.addRow(row);
+        }
+    }
+    public void showUpcomingWeek38() {
+        ArrayList<UpcomingGames> week38 = upcomingGames38();
+        DefaultTableModel matchModel = (DefaultTableModel) upcomingScheduleTable.getModel();
+        Object[] row = new Object[3];
+        matchModel.setRowCount(0);
+        for (int i = 0; i < week38.size(); i++) {
+            row[0] = week38.get(i).getDate();
+            row[1] = week38.get(i).getAwayTeam();
+            row[2] = week38.get(i).getHomeTeam();
+            matchModel.addRow(row);
+        }
+    }
     /*********************************************************/
 
 
@@ -733,18 +864,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         upcomingScheduleTable.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
-                },
+                new Object[][]{},
                 new String[]{
                         "Date", "Away Team", "Home Team"
                 }
@@ -2933,13 +3053,9 @@ public class Login extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Incorrect Username or password", "Login Failed", 2);
             }
-
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
         loginPanel.setVisible(false);
         homePanel.setVisible(true);
     }//GEN-LAST:event_loginLoginButtonActionPerformed
@@ -3019,12 +3135,26 @@ public class Login extends javax.swing.JFrame {
         homePanel.setVisible(true);
     }//GEN-LAST:event_upcomingBackButtonActionPerformed
 
-    private void upcomingGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGoButtonActionPerformed
-        /* The Go Button should refresh the upcomingScheduleTable to reflect
-        future games. This action has been created, but code cannot be added
-        until methods for parsing the data for the table are included      */
+    private void upcomingGoButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        int selection = upcomingJCB.getSelectedIndex();
+        switch (selection){
+            case 0:
+                showUpcomingWeek35();
+                break;
+            case 1:
+                showUpcomingWeek36();
+                break;
+            case 2:
+                showUpcomingWeek37();
+                break;
+            case 3:
+                showUpcomingWeek38();
+                break;
+            default:
+                break;
+        }
 
-    }//GEN-LAST:event_upcomingGoButtonActionPerformed
+    }
 
     private void upcomingGame1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame1ButtonActionPerformed
         // This is 1 of 10 buttons that will lead to the same panel (wagersPanel)
