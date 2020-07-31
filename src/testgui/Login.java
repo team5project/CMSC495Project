@@ -13,9 +13,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.awt.*;
 
 /**
  * @author Alan
@@ -33,7 +33,7 @@ public class Login extends javax.swing.JFrame {
         showRankings();
         showScores();
     }
-/*********************************************************/
+
     /**
      * Gets team ranking information from the database.
      * @author Keenan
@@ -86,6 +86,47 @@ public class Login extends javax.swing.JFrame {
     }
 
     /**
+     * Modifies homeStandingsTable to show rankings.
+     * @author Keenan
+     * @return void
+     */
+    public void showRankings(){
+        ArrayList<TeamRanking> rankingList = teamRankings();
+        DefaultTableModel model = (DefaultTableModel) homeStandingsTable.getModel();
+        Object[] row = new Object[7];
+        for (int i = 0; i < rankingList.size(); i++){
+            row[0] = rankingList.get(i).getTeam();
+            row[1] = rankingList.get(i).getRanking();
+            row[2] = rankingList.get(i).getWins();
+            row[3] = rankingList.get(i).getLosses();
+            row[4] = rankingList.get(i).getDraws();
+            row[5] = rankingList.get(i).getGoalsFor();
+            row[6] = rankingList.get(i).getGoalsAgainst();
+            model.addRow(row);
+        }
+
+    }
+    /**
+     * Modifies resultsScoresTable to show rankings.
+     * @author Keenan
+     * @return void
+     */
+    public void showScores(){
+            ArrayList<ScoreResults> scoreResults = scoreResults();
+            DefaultTableModel model = (DefaultTableModel) resultsScoresTable.getModel();
+            Object[] row = new Object[6];
+        for (int i = 0; i < scoreResults.size(); i++){
+            row[0] = scoreResults.get(i).getDate();
+            row[1] = scoreResults.get(i).getHomeTeam();
+            row[2] = scoreResults.get(i).getHomeGoals();
+            row[3] = scoreResults.get(i).getAwayTeam();
+            row[4] = scoreResults.get(i).getAwayGoals();
+            row[5] = scoreResults.get(i).getVenue();
+            model.addRow(row);
+        }
+    }
+
+    /**
      * Gets week 35 match information from the database.
      * @author Keenan
      * @return week35
@@ -98,8 +139,8 @@ public class Login extends javax.swing.JFrame {
             UpcomingGames upcomingGames;
             while (rs.next()){
                 upcomingGames = new UpcomingGames(rs.getString("match_date"),
-                                                  rs.getString("away_team"),
-                                                  rs.getString("home_team"));
+                        rs.getString("away_team"),
+                        rs.getString("home_team"));
                 week35.add(upcomingGames);
             }
         }catch (SQLException e){
@@ -175,49 +216,7 @@ public class Login extends javax.swing.JFrame {
         }
         return week38;
     }
-    /*********************************************************/
-    /*********************************************************/
-    /**
-     * Modifies homeStandingsTable to show rankings.
-     * @author Keenan
-     * @return void
-     */
-    public void showRankings(){
-        ArrayList<TeamRanking> rankingList = teamRankings();
-        DefaultTableModel model = (DefaultTableModel) homeStandingsTable.getModel();
-        Object[] row = new Object[7];
-        for (int i = 0; i < rankingList.size(); i++){
-            row[0] = rankingList.get(i).getTeam();
-            row[1] = rankingList.get(i).getRanking();
-            row[2] = rankingList.get(i).getWins();
-            row[3] = rankingList.get(i).getLosses();
-            row[4] = rankingList.get(i).getDraws();
-            row[5] = rankingList.get(i).getGoalsFor();
-            row[6] = rankingList.get(i).getGoalsAgainst();
-            model.addRow(row);
 
-        }
-
-    }
-    /**
-     * Modifies resultsScoresTable to show rankings.
-     * @author Keenan
-     * @return void
-     */
-    public void showScores(){
-            ArrayList<ScoreResults> scoreResults = scoreResults();
-            DefaultTableModel model = (DefaultTableModel) resultsScoresTable.getModel();
-            Object[] row = new Object[6];
-        for (int i = 0; i < scoreResults.size(); i++){
-            row[0] = scoreResults.get(i).getDate();
-            row[1] = scoreResults.get(i).getHomeTeam();
-            row[2] = scoreResults.get(i).getHomeGoals();
-            row[3] = scoreResults.get(i).getAwayTeam();
-            row[4] = scoreResults.get(i).getAwayGoals();
-            row[5] = scoreResults.get(i).getVenue();
-            model.addRow(row);
-        }
-    }
 
     /**
      * Modifies upcomingScheduleTable to show match data for that week.
@@ -275,6 +274,7 @@ public class Login extends javax.swing.JFrame {
         }
     }
     /*********************************************************/
+
 
 
     /**
@@ -539,6 +539,7 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Soccer Scores and Wagers Application");
+		getContentPane().setBackground(Color.CYAN);
 
         loginRegisterButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         loginRegisterButton.setText("Register");
@@ -579,6 +580,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
+		loginPanel.setBackground(Color.CYAN);
         loginPanelLayout.setHorizontalGroup(
                 loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(loginPanelLayout.createSequentialGroup()
@@ -660,6 +662,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout registerPanelLayout = new javax.swing.GroupLayout(registerPanel);
         registerPanel.setLayout(registerPanelLayout);
+		registerPanel.setBackground(Color.CYAN);
         registerPanelLayout.setHorizontalGroup(
                 registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(registerPanelLayout.createSequentialGroup()
@@ -758,6 +761,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
         homePanel.setLayout(homePanelLayout);
+		homePanel.setBackground(Color.CYAN);
         homePanelLayout.setHorizontalGroup(
                 homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(homePanelLayout.createSequentialGroup()
@@ -823,6 +827,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout resultsPanelLayout = new javax.swing.GroupLayout(resultsPanel);
         resultsPanel.setLayout(resultsPanelLayout);
+		resultsPanel.setBackground(Color.CYAN);
         resultsPanelLayout.setHorizontalGroup(
                 resultsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(resultsPanelLayout.createSequentialGroup()
@@ -864,7 +869,18 @@ public class Login extends javax.swing.JFrame {
         });
 
         upcomingScheduleTable.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{},
+                new Object[][]{
+                        {null, null, null},
+                        {null, null, null},
+                        {null, null, null},
+                        {null, null, null},
+                        {null, null, null},
+                        {null, null, null},
+                        {null, null, null},
+                        {null, null, null},
+                        {null, null, null},
+                        {null, null, null}
+                },
                 new String[]{
                         "Date", "Away Team", "Home Team"
                 }
@@ -966,6 +982,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout upcomingGamesPanelLayout = new javax.swing.GroupLayout(upcomingGamesPanel);
         upcomingGamesPanel.setLayout(upcomingGamesPanelLayout);
+		upcomingGamesPanel.setBackground(Color.CYAN);
         upcomingGamesPanelLayout.setHorizontalGroup(
                 upcomingGamesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(upcomingGamesPanelLayout.createSequentialGroup()
@@ -1086,6 +1103,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout wagersPanelLayout = new javax.swing.GroupLayout(wagersPanel);
         wagersPanel.setLayout(wagersPanelLayout);
+		wagersPanel.setBackground(Color.CYAN);
         wagersPanelLayout.setHorizontalGroup(
                 wagersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(wagersPanelLayout.createSequentialGroup()
@@ -1166,6 +1184,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout thankYouPanelLayout = new javax.swing.GroupLayout(thankYouPanel);
         thankYouPanel.setLayout(thankYouPanelLayout);
+		thankYouPanel.setBackground(Color.CYAN);
         thankYouPanelLayout.setHorizontalGroup(
                 thankYouPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(thankYouPanelLayout.createSequentialGroup()
@@ -1239,6 +1258,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout arsenalPanelLayout = new javax.swing.GroupLayout(arsenalPanel);
         arsenalPanel.setLayout(arsenalPanelLayout);
+		arsenalPanel.setBackground(Color.CYAN);
         arsenalPanelLayout.setHorizontalGroup(
                 arsenalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(arsenalPanelLayout.createSequentialGroup()
@@ -1318,6 +1338,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout astonPanelLayout = new javax.swing.GroupLayout(astonPanel);
         astonPanel.setLayout(astonPanelLayout);
+		astonPanel.setBackground(Color.CYAN);
         astonPanelLayout.setHorizontalGroup(
                 astonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(astonPanelLayout.createSequentialGroup()
@@ -1404,6 +1425,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout bournemouthPanelLayout = new javax.swing.GroupLayout(bournemouthPanel);
         bournemouthPanel.setLayout(bournemouthPanelLayout);
+		bournemouthPanel.setBackground(Color.CYAN);
         bournemouthPanelLayout.setHorizontalGroup(
                 bournemouthPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(bournemouthPanelLayout.createSequentialGroup()
@@ -1489,6 +1511,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout brightonPanelLayout = new javax.swing.GroupLayout(brightonPanel);
         brightonPanel.setLayout(brightonPanelLayout);
+		brightonPanel.setBackground(Color.CYAN);
         brightonPanelLayout.setHorizontalGroup(
                 brightonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(brightonPanelLayout.createSequentialGroup()
@@ -1574,6 +1597,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout burnleyPanelLayout = new javax.swing.GroupLayout(burnleyPanel);
         burnleyPanel.setLayout(burnleyPanelLayout);
+		burnleyPanel.setBackground(Color.CYAN);
         burnleyPanelLayout.setHorizontalGroup(
                 burnleyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(burnleyPanelLayout.createSequentialGroup()
@@ -1659,6 +1683,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout chelseaPanelLayout = new javax.swing.GroupLayout(chelseaPanel);
         chelseaPanel.setLayout(chelseaPanelLayout);
+		chelseaPanel.setBackground(Color.CYAN);
         chelseaPanelLayout.setHorizontalGroup(
                 chelseaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(chelseaPanelLayout.createSequentialGroup()
@@ -1744,6 +1769,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout cpPanelLayout = new javax.swing.GroupLayout(cpPanel);
         cpPanel.setLayout(cpPanelLayout);
+		cpPanel.setBackground(Color.CYAN);
         cpPanelLayout.setHorizontalGroup(
                 cpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(cpPanelLayout.createSequentialGroup()
@@ -1829,6 +1855,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout evertonPanelLayout = new javax.swing.GroupLayout(evertonPanel);
         evertonPanel.setLayout(evertonPanelLayout);
+		evertonPanel.setBackground(Color.CYAN);
         evertonPanelLayout.setHorizontalGroup(
                 evertonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(evertonPanelLayout.createSequentialGroup()
@@ -1914,6 +1941,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout lcPanelLayout = new javax.swing.GroupLayout(lcPanel);
         lcPanel.setLayout(lcPanelLayout);
+		lcPanel.setBackground(Color.CYAN);
         lcPanelLayout.setHorizontalGroup(
                 lcPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(lcPanelLayout.createSequentialGroup()
@@ -1999,6 +2027,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout liverpoolPanelLayout = new javax.swing.GroupLayout(liverpoolPanel);
         liverpoolPanel.setLayout(liverpoolPanelLayout);
+		liverpoolPanel.setBackground(Color.CYAN);
         liverpoolPanelLayout.setHorizontalGroup(
                 liverpoolPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(liverpoolPanelLayout.createSequentialGroup()
@@ -2084,6 +2113,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout manCityPanelLayout = new javax.swing.GroupLayout(manCityPanel);
         manCityPanel.setLayout(manCityPanelLayout);
+		manCityPanel.setBackground(Color.CYAN);
         manCityPanelLayout.setHorizontalGroup(
                 manCityPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(manCityPanelLayout.createSequentialGroup()
@@ -2169,6 +2199,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout manUnitedPanelLayout = new javax.swing.GroupLayout(manUnitedPanel);
         manUnitedPanel.setLayout(manUnitedPanelLayout);
+		manUnitedPanel.setBackground(Color.CYAN);
         manUnitedPanelLayout.setHorizontalGroup(
                 manUnitedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(manUnitedPanelLayout.createSequentialGroup()
@@ -2254,6 +2285,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout ncuPanelLayout = new javax.swing.GroupLayout(ncuPanel);
         ncuPanel.setLayout(ncuPanelLayout);
+		ncuPanel.setBackground(Color.CYAN);
         ncuPanelLayout.setHorizontalGroup(
                 ncuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(ncuPanelLayout.createSequentialGroup()
@@ -2339,6 +2371,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout norwichPanelLayout = new javax.swing.GroupLayout(norwichPanel);
         norwichPanel.setLayout(norwichPanelLayout);
+		norwichPanel.setBackground(Color.CYAN);
         norwichPanelLayout.setHorizontalGroup(
                 norwichPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(norwichPanelLayout.createSequentialGroup()
@@ -2424,6 +2457,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout sheffieldPanelLayout = new javax.swing.GroupLayout(sheffieldPanel);
         sheffieldPanel.setLayout(sheffieldPanelLayout);
+		sheffieldPanel.setBackground(Color.CYAN);
         sheffieldPanelLayout.setHorizontalGroup(
                 sheffieldPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(sheffieldPanelLayout.createSequentialGroup()
@@ -2509,6 +2543,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout southamptonPanelLayout = new javax.swing.GroupLayout(southamptonPanel);
         southamptonPanel.setLayout(southamptonPanelLayout);
+		southamptonPanel.setBackground(Color.CYAN);
         southamptonPanelLayout.setHorizontalGroup(
                 southamptonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(southamptonPanelLayout.createSequentialGroup()
@@ -2594,6 +2629,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout tottenhamPanelLayout = new javax.swing.GroupLayout(tottenhamPanel);
         tottenhamPanel.setLayout(tottenhamPanelLayout);
+		tottenhamPanel.setBackground(Color.CYAN);
         tottenhamPanelLayout.setHorizontalGroup(
                 tottenhamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(tottenhamPanelLayout.createSequentialGroup()
@@ -2679,6 +2715,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout watfordPanelLayout = new javax.swing.GroupLayout(watfordPanel);
         watfordPanel.setLayout(watfordPanelLayout);
+		watfordPanel.setBackground(Color.CYAN);
         watfordPanelLayout.setHorizontalGroup(
                 watfordPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(watfordPanelLayout.createSequentialGroup()
@@ -2764,6 +2801,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout whPanelLayout = new javax.swing.GroupLayout(whPanel);
         whPanel.setLayout(whPanelLayout);
+		whPanel.setBackground(Color.CYAN);
         whPanelLayout.setHorizontalGroup(
                 whPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(whPanelLayout.createSequentialGroup()
@@ -2849,6 +2887,7 @@ public class Login extends javax.swing.JFrame {
 
         javax.swing.GroupLayout wolvesPanelLayout = new javax.swing.GroupLayout(wolvesPanel);
         wolvesPanel.setLayout(wolvesPanelLayout);
+		wolvesPanel.setBackground(Color.CYAN);
         wolvesPanelLayout.setHorizontalGroup(
                 wolvesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(wolvesPanelLayout.createSequentialGroup()
@@ -3053,9 +3092,13 @@ public class Login extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Incorrect Username or password", "Login Failed", 2);
             }
+
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+
         loginPanel.setVisible(false);
         homePanel.setVisible(true);
     }//GEN-LAST:event_loginLoginButtonActionPerformed
@@ -3135,7 +3178,7 @@ public class Login extends javax.swing.JFrame {
         homePanel.setVisible(true);
     }//GEN-LAST:event_upcomingBackButtonActionPerformed
 
-    private void upcomingGoButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void upcomingGoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGoButtonActionPerformed
         int selection = upcomingJCB.getSelectedIndex();
         switch (selection){
             case 0:
@@ -3154,7 +3197,7 @@ public class Login extends javax.swing.JFrame {
                 break;
         }
 
-    }
+    }//GEN-LAST:event_upcomingGoButtonActionPerformed
 
     private void upcomingGame1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame1ButtonActionPerformed
         // This is 1 of 10 buttons that will lead to the same panel (wagersPanel)
