@@ -210,17 +210,13 @@ public class Login extends javax.swing.JFrame {
                                                   rs.getString("away_team"),
                                                   rs.getString("home_team"));
                 week38.add(upcomingGames);
+
             }
         }catch (SQLException e){
             JOptionPane.showMessageDialog(null,e);
         }
         return week38;
     }
-
-    //public ArrayList<OverUnderFormula>getMatchData(){
-
-
-    //}
 
 
 
@@ -3093,18 +3089,19 @@ public class Login extends javax.swing.JFrame {
             rs = ps.executeQuery();
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "User " + username + " is Logged in","User Login",2);
+                //homePanel.setVisible(true);
+                //loginPanel.setVisible(false);
             } else {
                 JOptionPane.showMessageDialog(null, "Incorrect Username or password", "Login Failed", 2);
+                //loginPanel.setVisible(true);
+
             }
-
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-
         loginPanel.setVisible(false);
         homePanel.setVisible(true);
+
     }//GEN-LAST:event_loginLoginButtonActionPerformed
 
     private void loginRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginRegisterButtonActionPerformed
@@ -3127,7 +3124,7 @@ public class Login extends javax.swing.JFrame {
         } else if (password.equals("")) {
             JOptionPane.showMessageDialog(null, "Enter a Password");
         } else if (check.checkUserName(username)) {
-            JOptionPane.showMessageDialog(null, "This Username Already Exist");
+            JOptionPane.showMessageDialog(null, "This Username Already Exists");
         }
         try {
             ps = conn.dbConnection().prepareStatement("INSERT INTO user_login(username, password) VALUES (?,?)");
