@@ -12,7 +12,6 @@ public class OverUnderFormula {
 
     final double passScoreRate = 336;
     final double shotScoreRate = 9;
-    final double saveScoreRate = 2;
 
     OverUnderFormula(){}
 
@@ -46,91 +45,4 @@ public class OverUnderFormula {
         return overUnder;
     }
 
-    public double getHomeGS() {
-        return homeGS;
-    }
-
-    public double getHomeXGP() {
-        return homeXGP;
-    }
-
-    public double getHomeXGS() {
-        return homeXGS;
-    }
-
-    public double getHomeGA() {
-        return homeGA;
-    }
-
-    public double getHomeXGA() {
-        return homeXGA;
-    }
-
-    public double getHomePasses() {
-        return homePasses;
-    }
-
-    public double getHomeShots() {
-        return homeShots;
-    }
-
-    public double getHomeSaves() {
-        return homeSaves;
-    }
-
-    public double getAwayGS() {
-        return awayGS;
-    }
-
-    public double getAwayXGP() {
-        return awayXGP;
-    }
-
-    public double getAwayXGS() {
-        return awayXGS;
-    }
-
-    public double getAwayGA() {
-        return awayGA;
-    }
-
-    public double getAwayXGA() {
-        return awayXGA;
-    }
-
-    public double getAwayPasses() {
-        return awayPasses;
-    }
-
-    public double getAwayShots() {
-        return awayShots;
-    }
-
-    public double getAwaySaves() {
-        return awaySaves;
-    }
-
-    public double getHomeProjection() {
-        return homeProjection;
-    }
-
-    public double getAwayProjection() {
-        return awayProjection;
-    }
-
-    public double getOverUnder() {
-        return overUnder;
-    }
-
-    public double getPassScoreRate() {
-        return passScoreRate;
-    }
-
-    public double getShotScoreRate() {
-        return shotScoreRate;
-    }
-
-    public double getSaveScoreRate() {
-        return saveScoreRate;
-    }
 }

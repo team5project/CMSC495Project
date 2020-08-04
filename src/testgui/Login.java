@@ -85,6 +85,8 @@ public class Login extends javax.swing.JFrame {
         return scores;
     }
 
+
+
     /**
      * Modifies homeStandingsTable to show rankings.
      * @author Keenan
@@ -3089,18 +3091,17 @@ public class Login extends javax.swing.JFrame {
             rs = ps.executeQuery();
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "User " + username + " is Logged in","User Login",2);
-                //homePanel.setVisible(true);
-                //loginPanel.setVisible(false);
+                homePanel.setVisible(true);
+                loginPanel.setVisible(false);
             } else {
                 JOptionPane.showMessageDialog(null, "Incorrect Username or password", "Login Failed", 2);
-                //loginPanel.setVisible(true);
+                loginPanel.setVisible(true);
 
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        loginPanel.setVisible(false);
-        homePanel.setVisible(true);
+
 
     }//GEN-LAST:event_loginLoginButtonActionPerformed
 
@@ -3202,121 +3203,160 @@ public class Login extends javax.swing.JFrame {
 
     private void upcomingGame1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame1ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(56,48,18649,406,147,
+                                        36,64,18549,406,147);
+        Object[] row = new Object[2];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(0,1);
         row[1] = model1.getValueAt(0,2);
         model2.addRow(row);
-
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame1ButtonActionPerformed
 
     private void upcomingGame2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame2ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(43,50,12814,387,120,
+                                        39,54,18188,462,117);
+        Object[] row = new Object[2];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(1,1);
         row[1] = model1.getValueAt(1,2);
         model2.addRow(row);
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame2ButtonActionPerformed
 
     private void upcomingGame3ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame3ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(69,54,23244,625,65,
+                                52,40,16764,461,91);
+        Object[] row = new Object[2];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(2,1);
         row[1] = model1.getValueAt(2,2);
         model2.addRow(row);
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame3ButtonActionPerformed
 
     private void upcomingGame4ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame4ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(31,50,14688,376,126,
+                61,47,16644,444,140);
+        Object[] row = new Object[2];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(3,1);
         row[1] = model1.getValueAt(3,2);
         model2.addRow(row);
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame4ButtonActionPerformed
 
     private void upcomingGame5ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame5ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(44,56,15826,469,95,
+                44,56,15826,469,95);
+        Object[] row = new Object[2];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(4,1);
         row[1] = model1.getValueAt(4,2);
         model2.addRow(row);
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame5ButtonActionPerformed
 
     private void upcomingGame6ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame6ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(67,43,19915,540,96,
+                66,36,20059,544,96);
+        Object[] row = new Object[3];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(5,1);
         row[1] = model1.getValueAt(5,2);
         model2.addRow(row);
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame6ButtonActionPerformed
 
     private void upcomingGame7ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame7ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(102,35,26392,745,76,
+                26,75,17362,409,140);
+        Object[] row = new Object[2];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(6,1);
         row[1] = model1.getValueAt(6,2);
         model2.addRow(row);
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame7ButtonActionPerformed
 
     private void upcomingGame8ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame8ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(38,58,13066,399,140,
+                85,33,23872,591,76);
+        Object[] row = new Object[2];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(7,1);
         row[1] = model1.getValueAt(7,2);
         model2.addRow(row);
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame8ButtonActionPerformed
 
     private void upcomingGame9ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame9ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(51,60,15667,499,109,
+                39,39,14922,353,102);
+        Object[] row = new Object[2];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(8,1);
         row[1] = model1.getValueAt(8,2);
         model2.addRow(row);
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame9ButtonActionPerformed
 
     private void upcomingGame10ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_upcomingGame10ButtonActionPerformed
         DefaultTableModel model1 = (DefaultTableModel) upcomingScheduleTable.getModel();
-        Object[] row = new Object[2];
         DefaultTableModel model2 = (DefaultTableModel) wagersTable.getModel();
+        OverUnderFormula o = new OverUnderFormula();
+        Object result = o.OverUnderCalc(49,62,15101,417,129,
+                                        41,67,13835,457,116);
+        Object[] row = new Object[2];
         model2.setRowCount(0);
         row[0] = model1.getValueAt(9,1);
         row[1] = model1.getValueAt(9,2);
         model2.addRow(row);
+        model2.setValueAt(result,0,2);
         upcomingGamesPanel.setVisible(false);
         wagersPanel.setVisible(true);
     }//GEN-LAST:event_upcomingGame10ButtonActionPerformed
