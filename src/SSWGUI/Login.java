@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package testgui;
+package SSWGUI;
 
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -1256,7 +1255,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        arsenalLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/arsenal.png"))); // NOI18N
+        arsenalLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/arsenal.png"))); // NOI18N
 
         javax.swing.GroupLayout arsenalPanelLayout = new javax.swing.GroupLayout(arsenalPanel);
         arsenalPanel.setLayout(arsenalPanelLayout);
@@ -1336,7 +1335,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        astonLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/aston.png"))); // NOI18N
+        astonLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/aston.png"))); // NOI18N
 
         javax.swing.GroupLayout astonPanelLayout = new javax.swing.GroupLayout(astonPanel);
         astonPanel.setLayout(astonPanelLayout);
@@ -1423,7 +1422,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        bournemouthLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/bournemouth.png"))); // NOI18N
+        bournemouthLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/bournemouth.png"))); // NOI18N
 
         javax.swing.GroupLayout bournemouthPanelLayout = new javax.swing.GroupLayout(bournemouthPanel);
         bournemouthPanel.setLayout(bournemouthPanelLayout);
@@ -1509,7 +1508,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        brightonLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/brighton.png"))); // NOI18N
+        brightonLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/brighton.png"))); // NOI18N
 
         javax.swing.GroupLayout brightonPanelLayout = new javax.swing.GroupLayout(brightonPanel);
         brightonPanel.setLayout(brightonPanelLayout);
@@ -1595,7 +1594,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        burnleyLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/burnley.png"))); // NOI18N
+        burnleyLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/burnley.png"))); // NOI18N
 
         javax.swing.GroupLayout burnleyPanelLayout = new javax.swing.GroupLayout(burnleyPanel);
         burnleyPanel.setLayout(burnleyPanelLayout);
@@ -1681,7 +1680,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        chelseaLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/chelsea.png"))); // NOI18N
+        chelseaLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/chelsea.png"))); // NOI18N
 
         javax.swing.GroupLayout chelseaPanelLayout = new javax.swing.GroupLayout(chelseaPanel);
         chelseaPanel.setLayout(chelseaPanelLayout);
@@ -1767,7 +1766,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        cpLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/cp.png"))); // NOI18N
+        cpLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/cp.png"))); // NOI18N
 
         javax.swing.GroupLayout cpPanelLayout = new javax.swing.GroupLayout(cpPanel);
         cpPanel.setLayout(cpPanelLayout);
@@ -1853,7 +1852,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        evertonLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/everton.png"))); // NOI18N
+        evertonLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/everton.png"))); // NOI18N
 
         javax.swing.GroupLayout evertonPanelLayout = new javax.swing.GroupLayout(evertonPanel);
         evertonPanel.setLayout(evertonPanelLayout);
@@ -1939,7 +1938,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        lcLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/lc.png"))); // NOI18N
+        lcLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/lc.png"))); // NOI18N
 
         javax.swing.GroupLayout lcPanelLayout = new javax.swing.GroupLayout(lcPanel);
         lcPanel.setLayout(lcPanelLayout);
@@ -2025,7 +2024,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        liverpoolLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/liverpool.png"))); // NOI18N
+        liverpoolLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/liverpool.png"))); // NOI18N
 
         javax.swing.GroupLayout liverpoolPanelLayout = new javax.swing.GroupLayout(liverpoolPanel);
         liverpoolPanel.setLayout(liverpoolPanelLayout);
@@ -2111,7 +2110,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        manCityLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/manCity.png"))); // NOI18N
+        manCityLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/manCity.png"))); // NOI18N
 
         javax.swing.GroupLayout manCityPanelLayout = new javax.swing.GroupLayout(manCityPanel);
         manCityPanel.setLayout(manCityPanelLayout);
@@ -2197,7 +2196,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        manUnitedLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/manUnited.png"))); // NOI18N
+        manUnitedLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/manUnited.png"))); // NOI18N
 
         javax.swing.GroupLayout manUnitedPanelLayout = new javax.swing.GroupLayout(manUnitedPanel);
         manUnitedPanel.setLayout(manUnitedPanelLayout);
@@ -2283,7 +2282,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        ncuLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/newcastle.png"))); // NOI18N
+        ncuLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/newcastle.png"))); // NOI18N
 
         javax.swing.GroupLayout ncuPanelLayout = new javax.swing.GroupLayout(ncuPanel);
         ncuPanel.setLayout(ncuPanelLayout);
@@ -2369,7 +2368,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        norwichLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/norwich.png"))); // NOI18N
+        norwichLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/norwich.png"))); // NOI18N
 
         javax.swing.GroupLayout norwichPanelLayout = new javax.swing.GroupLayout(norwichPanel);
         norwichPanel.setLayout(norwichPanelLayout);
@@ -2455,7 +2454,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        sheffieldLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/sheffield.png"))); // NOI18N
+        sheffieldLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/sheffield.png"))); // NOI18N
 
         javax.swing.GroupLayout sheffieldPanelLayout = new javax.swing.GroupLayout(sheffieldPanel);
         sheffieldPanel.setLayout(sheffieldPanelLayout);
@@ -2541,7 +2540,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        southamptonLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/southampton.png"))); // NOI18N
+        southamptonLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/southampton.png"))); // NOI18N
 
         javax.swing.GroupLayout southamptonPanelLayout = new javax.swing.GroupLayout(southamptonPanel);
         southamptonPanel.setLayout(southamptonPanelLayout);
@@ -2627,7 +2626,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        tottenhamLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/tottenham.png"))); // NOI18N
+        tottenhamLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/tottenham.png"))); // NOI18N
 
         javax.swing.GroupLayout tottenhamPanelLayout = new javax.swing.GroupLayout(tottenhamPanel);
         tottenhamPanel.setLayout(tottenhamPanelLayout);
@@ -2713,7 +2712,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        watfordLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/watford.png"))); // NOI18N
+        watfordLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/watford.png"))); // NOI18N
 
         javax.swing.GroupLayout watfordPanelLayout = new javax.swing.GroupLayout(watfordPanel);
         watfordPanel.setLayout(watfordPanelLayout);
@@ -2799,7 +2798,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        whLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/wh.png"))); // NOI18N
+        whLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/wh.png"))); // NOI18N
 
         javax.swing.GroupLayout whPanelLayout = new javax.swing.GroupLayout(whPanel);
         whPanel.setLayout(whPanelLayout);
@@ -2885,7 +2884,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        wolvesLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/testgui/wolves.png"))); // NOI18N
+        wolvesLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SSWGUI/wolves.png"))); // NOI18N
 
         javax.swing.GroupLayout wolvesPanelLayout = new javax.swing.GroupLayout(wolvesPanel);
         wolvesPanel.setLayout(wolvesPanelLayout);

@@ -1443,7 +1443,7 @@
         <Component class="javax.swing.JLabel" name="arsenalLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/arsenal.png"/>
+              <Image iconType="3" name="/SSWGUI/arsenal.png"/>
             </Property>
           </Properties>
         </Component>
@@ -1594,7 +1594,7 @@
         <Component class="javax.swing.JLabel" name="astonLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/aston.png"/>
+              <Image iconType="3" name="/SSWGUI/aston.png"/>
             </Property>
           </Properties>
         </Component>
@@ -1744,7 +1744,7 @@
         <Component class="javax.swing.JLabel" name="bournemouthLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/bournemouth.png"/>
+              <Image iconType="3" name="/SSWGUI/bournemouth.png"/>
             </Property>
           </Properties>
         </Component>
@@ -1894,7 +1894,7 @@
         <Component class="javax.swing.JLabel" name="brightonLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/brighton.png"/>
+              <Image iconType="3" name="/SSWGUI/brighton.png"/>
             </Property>
           </Properties>
         </Component>
@@ -2044,7 +2044,7 @@
         <Component class="javax.swing.JLabel" name="burnleyLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/burnley.png"/>
+              <Image iconType="3" name="/SSWGUI/burnley.png"/>
             </Property>
           </Properties>
         </Component>
@@ -2194,7 +2194,7 @@
         <Component class="javax.swing.JLabel" name="chelseaLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/chelsea.png"/>
+              <Image iconType="3" name="/SSWGUI/chelsea.png"/>
             </Property>
           </Properties>
         </Component>
@@ -2344,7 +2344,7 @@
         <Component class="javax.swing.JLabel" name="cpLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/cp.png"/>
+              <Image iconType="3" name="/SSWGUI/cp.png"/>
             </Property>
           </Properties>
         </Component>
@@ -2494,7 +2494,7 @@
         <Component class="javax.swing.JLabel" name="evertonLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/everton.png"/>
+              <Image iconType="3" name="/SSWGUI/everton.png"/>
             </Property>
           </Properties>
         </Component>
@@ -2644,7 +2644,7 @@
         <Component class="javax.swing.JLabel" name="lcLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/lc.png"/>
+              <Image iconType="3" name="/SSWGUI/lc.png"/>
             </Property>
           </Properties>
         </Component>
@@ -2794,7 +2794,7 @@
         <Component class="javax.swing.JLabel" name="liverpoolLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/liverpool.png"/>
+              <Image iconType="3" name="/SSWGUI/liverpool.png"/>
             </Property>
           </Properties>
         </Component>
@@ -2944,7 +2944,7 @@
         <Component class="javax.swing.JLabel" name="manCityLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/manCity.png"/>
+              <Image iconType="3" name="/SSWGUI/manCity.png"/>
             </Property>
           </Properties>
         </Component>
@@ -3094,7 +3094,7 @@
         <Component class="javax.swing.JLabel" name="manUnitedLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/manUnited.png"/>
+              <Image iconType="3" name="/SSWGUI/manUnited.png"/>
             </Property>
           </Properties>
         </Component>
@@ -3244,7 +3244,7 @@
         <Component class="javax.swing.JLabel" name="ncuLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/newcastle.png"/>
+              <Image iconType="3" name="/SSWGUI/newcastle.png"/>
             </Property>
           </Properties>
         </Component>
@@ -3394,7 +3394,7 @@
         <Component class="javax.swing.JLabel" name="norwichLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/norwich.png"/>
+              <Image iconType="3" name="/SSWGUI/norwich.png"/>
             </Property>
           </Properties>
         </Component>
@@ -3544,7 +3544,7 @@
         <Component class="javax.swing.JLabel" name="sheffieldLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/sheffield.png"/>
+              <Image iconType="3" name="/SSWGUI/sheffield.png"/>
             </Property>
           </Properties>
         </Component>
@@ -3694,7 +3694,7 @@
         <Component class="javax.swing.JLabel" name="southamptonLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/southampton.png"/>
+              <Image iconType="3" name="/SSWGUI/southampton.png"/>
             </Property>
           </Properties>
         </Component>
@@ -3844,7 +3844,7 @@
         <Component class="javax.swing.JLabel" name="tottenhamLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/tottenham.png"/>
+              <Image iconType="3" name="/SSWGUI/tottenham.png"/>
             </Property>
           </Properties>
         </Component>
@@ -3994,7 +3994,7 @@
         <Component class="javax.swing.JLabel" name="watfordLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/watford.png"/>
+              <Image iconType="3" name="/SSWGUI/watford.png"/>
             </Property>
           </Properties>
         </Component>
@@ -4144,7 +4144,7 @@
         <Component class="javax.swing.JLabel" name="whLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/wh.png"/>
+              <Image iconType="3" name="/SSWGUI/wh.png"/>
             </Property>
           </Properties>
         </Component>
@@ -4294,7 +4294,7 @@
         <Component class="javax.swing.JLabel" name="wolvesLogoLabel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/testgui/wolves.png"/>
+              <Image iconType="3" name="/SSWGUI/wolves.png"/>
             </Property>
           </Properties>
         </Component>

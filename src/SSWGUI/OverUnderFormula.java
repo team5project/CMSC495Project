@@ -1,4 +1,4 @@
-package testgui;
+package SSWGUI;
 
 public class OverUnderFormula {
     // GS = actual goals scored

@@ -1,4 +1,4 @@
-package testgui;
+package SSWGUI;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

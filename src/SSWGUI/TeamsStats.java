@@ -1,10 +1,7 @@
-package testgui;
+package SSWGUI;
 
-import javax.swing.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 /*
 Class for team stats to calculate over under

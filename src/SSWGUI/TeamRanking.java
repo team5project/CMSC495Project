@@ -1,6 +1,4 @@
-package testgui;
-
-import java.util.Date;
+package SSWGUI;
 
 public class TeamRanking {
     private final String team;

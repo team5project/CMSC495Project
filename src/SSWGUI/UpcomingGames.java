@@ -1,4 +1,4 @@
-package testgui;
+package SSWGUI;
 
 public class UpcomingGames {
     private final String date;

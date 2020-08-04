@@ -1,4 +1,4 @@
-package testgui;
+package SSWGUI;
 
 public class ScoreResults {
     private final String date;
