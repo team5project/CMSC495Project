@@ -25,6 +25,7 @@ public class Login extends javax.swing.JFrame {
     AWSConnection conn = new AWSConnection();
     PreparedStatement ps;
     ResultSet rs;
+	String sessionUserName;
 
     public Login() {
         initComponents();
@@ -3090,6 +3091,7 @@ public class Login extends javax.swing.JFrame {
             rs = ps.executeQuery();
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "User " + username + " is Logged in","User Login",2);
+				sessionUserName = username;
                 homePanel.setVisible(true);
                 loginPanel.setVisible(false);
             } else {
@@ -3131,7 +3133,8 @@ public class Login extends javax.swing.JFrame {
             ps.setString(1, username);
             ps.setString(2, password);
             if (ps.executeUpdate() > 0) {
-                JOptionPane.showMessageDialog(null, "New User Added","User Registration",2);
+                sessionUserName = username;
+				JOptionPane.showMessageDialog(null, "New User Added","User Registration",2);
             }
         } catch (SQLException throwables) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, throwables);
@@ -3161,8 +3164,46 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_wagersBackButtonActionPerformed
 
     private void wagersSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wagersSubmitButtonActionPerformed
-        wagersPanel.setVisible(false);
-        thankYouPanel.setVisible(true);
+                double wagerCheck = 0; // This is used to catch non whole number wagers
+                int wagerAmount; // This is the actual verified wager amount that will be inserted to the table
+		String overUnderSelection;
+		DefaultTableModel model = (DefaultTableModel) wagersTable.getModel();
+		String homeTeam = (String) model.getValueAt(0,1);
+		String awayTeam = (String) model.getValueAt(0,0);
+		if(wagersOverRB.isSelected()) {
+			overUnderSelection = "Over";
+		} else {
+			overUnderSelection = "Under";
+		}
+                // Try/Catch statement for handling both SQL exception and number format exception for user input
+                try{
+                    wagerCheck = Double.parseDouble(wagersWagerTextField.getText());
+                
+                    // % operator to check for remainder when dividing by 1
+                    // if there is a remainder, the input must not be a whole number
+                    // and an error message will appear informing the user of the mistake
+                    if((wagerCheck % 1) == 0){
+                        wagerAmount = (int) wagerCheck;
+       
+                        ps = conn.dbConnection().prepareStatement("INSERT INTO wagers(user_name, wager_amount, over_under, home_team, away_team) VALUES (?,?,?,?,?)");
+                        ps.setString(1, sessionUserName);
+                        ps.setInt(2, wagerAmount);
+                        ps.setString(3, overUnderSelection);
+                        ps.setString(4, homeTeam);
+                        ps.setString(5, awayTeam);
+                            if (ps.executeUpdate() > 0) {
+				JOptionPane.showMessageDialog(null, "Wager has been submitted, thank you!");
+                            }
+                        wagersPanel.setVisible(false);
+                        thankYouPanel.setVisible(true);
+                        } else {
+                                JOptionPane.showMessageDialog(null, "Wager must be a whole number");
+                                }
+                    } catch (SQLException throwables) {
+                        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, throwables);
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "Wager must be a number.");
+                    }
     }//GEN-LAST:event_wagersSubmitButtonActionPerformed
 
     private void thankYouExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thankYouExitButtonActionPerformed
