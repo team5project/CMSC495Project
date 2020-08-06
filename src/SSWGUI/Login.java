@@ -1081,6 +1081,7 @@ public class Login extends javax.swing.JFrame {
 
         wagersButtonGroup.add(wagersOverRB);
         wagersOverRB.setText("Over");
+		wagersOverRB.setSelected(true);
 
         wagersButtonGroup.add(wagersUnderRB);
         wagersUnderRB.setText("Under");
